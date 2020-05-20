@@ -1,0 +1,24 @@
+{% if product.variation_set.all %}
+
+
+{% if product.variation_set.licenses %}
+<select class="form-control" name="license">
+{% for var in product.variation_set.licenses %}
+<option value="{{ var.title|lower }}">{{ var.title|capfirst }}</option>
+{% endfor %}
+</select>
+
+{% endif %}
+
+
+{% if product.variation_set.packages %}
+
+<select class="form-control" name="package">
+{% for var in product.variation_set.packages %}
+<option value="{{ var.title|lower }}">{{ var.title|capfirst }}</option>
+{% endfor %}
+</select>
+
+{% endif %}
+
+{% endif %}
